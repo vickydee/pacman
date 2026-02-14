@@ -543,6 +543,12 @@ def cornersHeuristic(state, problem):
         curx, cury = best_corner
         remaining.remove(best_corner)
 
+class AStarCornersAgent(SearchAgent):
+    "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
+    def __init__(self):
+        self.searchFunction = lambda prob: search.aStarSearch(prob, cornersHeuristic)
+        self.searchType = CornersProblem
+
 class FoodSearchProblem:
     """
     A search problem associated with finding the a path that collects all of the
