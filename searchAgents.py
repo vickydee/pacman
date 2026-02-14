@@ -287,7 +287,6 @@ class CornersProblem(search.SearchProblem):
         self._expanded = 0 # DO NOT CHANGE; Number of search nodes expanded
         # Please add any code here which you would like to use
         # in initializing the problem
-        "*** YOUR CODE HERE ***"
         def getSuccessors(self, state):
             succ = []
             pos, visited = state
@@ -297,8 +296,8 @@ class CornersProblem(search.SearchProblem):
                 dx, dy = Actions.directionToVector(action)
                 nextx, nexty = int(x + dx), int(y + dy)
             
-            if self.walls[nextx][nexty]:
-                continue
+                if self.walls[nextx][nexty]:
+                    continue
             
             nextPos = (nextx, nexty)
             
